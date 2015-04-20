@@ -28,7 +28,7 @@ https://windows.github.com/
 - Create a directory and navigate to it.  
 - Clone repository
   ```shell
-  git clone
+  git clone https://github.com/arostaing/ShinyVM
   ```
 - Download VM ubuntu/trusty64
   ```shell
