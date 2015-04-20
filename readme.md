@@ -1,7 +1,9 @@
+---
 Title: Hosting R and Shiny Server in Ubuntu VM  
 Author: Antonio Rostaing  
 Email: arostaing@outlook.com
 Keywords: R, Shiny Server, Virtual Machine, virtualbox, vagrant, ubuntu
+---
 
 #Virtual Machine hosting R and Shiny Server  
 
