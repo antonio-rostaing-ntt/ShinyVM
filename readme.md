@@ -27,11 +27,11 @@ https://windows.github.com/
 
 - Create a directory and navigate to it.  
 - Clone repository
-  ```shell
+  ```Shell
   git clone https://github.com/arostaing/ShinyVM
   ```
 - Download VM ubuntu/trusty64
-  ```shell
+  ```Shell
   >vagrant box add ubuntu/trusty64
   ==> box: Loading metadata for box 'ubuntu/trusty64'
     box: URL: https://atlas.hashicorp.com/ubuntu/trusty64
