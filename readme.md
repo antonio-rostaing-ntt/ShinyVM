@@ -94,8 +94,17 @@ $ sudo restart shiny-server
 /etc/shiny-server/shiny-server.conf
 ```
 
+#### Server log:
+```
+/var/log/shiny-server.log.
+```
+
 #### Installing packages:
 
 - **provision.sh**: Add your package *'r-cran-package'* to line  
 `sudo apt-get install r-cran-plyr r-cran-reshape2 -y`
 - **R install.packages**: Add your package to the package list in `./ShinyApp/InstallPackage.R`
+
+-----
+
+![Shiny server welcome screen](./Shiny.png)
