@@ -73,11 +73,29 @@ Will remove all traces of the guest machine from your system. It'll stop the gue
 
 http://rstudio.github.io/shiny-server/latest
 
-**Forwarded ports**:
+#### Forwarded ports:
 - Shiny APPs: http://127.0.0.1:3838  
 - Shiny Admin Interface: http://127.0.0.1:4151
 
-**Synced folders**:
+####Synced folders:
 Synced folders enable Vagrant to sync a folder on the host machine to the guest machine, allowing you to continue working on your project's files on your host machine, but use the resources in the guest machine to compile or run your project.
 
 By default, Vagrant will share your project directory (the directory with the Vagrantfile) to /vagrant.
+
+#### Service manage:
+```
+$ sudo start shiny-server  
+$ sudo stop shiny-server  
+$ sudo restart shiny-server  
+```
+
+#### Config file:
+```
+/etc/shiny-server/shiny-server.conf
+```
+
+#### Installing packages:
+
+- **provision.sh**: Add your package *'r-cran-package'* to line  
+`sudo apt-get install r-cran-plyr r-cran-reshape2 -y`
+- **R install.packages**: Add your package to the package list in `./ShinyApp/InstallPackage.R`

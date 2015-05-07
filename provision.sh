@@ -13,23 +13,33 @@ set -euo pipefail
 
 sudo apt-get update -y
 
-echo "R"
+echo "***************"
+echo "Installing R..."
+echo "***************"
 sudo apt-get install r-base -y
 sudo apt-get install r-base-dev -y
-sudo su - \root -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('codetools', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-sudo su - \root -c "R -e \"update.packages(lib.loc='/usr/local/lib/R/site-library', repos='http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"update.packages(lib.loc='/usr/local/lib/R/site-library', repos='http://cran.rstudio.com/')\""
 
+echo "***************"
 echo "Shiny server..."
+echo "***************"
 sudo apt-get install gdebi-core -y
 wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 sudo gdebi shiny-server-1.3.0.403-amd64.deb --n
+
+echo "*************"
+echo "R Packages..."
+echo "*************"
+
+sudo su - -c "R -e \"source('/vagrant/ShinyApp/InstallPackage.R')\""
 
 # Test user shiny have access to R package
 # sudo su shiny
 # R
 # .libPaths()
 # .library(shiny)
-sudo chmod 707 /usr/local/lib/R/site-library
-sudo chmod 707 /usr/lib/R/site-library
-sudo chmod 707 /usr/lib/R/library
+
+#export R=/usr/bin
