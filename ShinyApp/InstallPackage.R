@@ -6,6 +6,10 @@ list.of.packages <- c('bit64',
                  'grid',
                  'shiny',
                  'rmarkdown')
+# Update package
+update.packages(checkBuilt = TRUE, ask = FALSE, lib.loc='/usr/local/lib/R/site-library', repos='http://cran.rstudio.com/')
+update.packages(checkBuilt = TRUE, ask = FALSE, lib.loc='/usr/lib/R/site-library', repos='http://cran.rstudio.com/')
+update.packages(checkBuilt = TRUE, ask = FALSE, lib.loc='/usr/lib/R/library', repos='http://cran.rstudio.com/')
 
 # Check for installed packages
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]

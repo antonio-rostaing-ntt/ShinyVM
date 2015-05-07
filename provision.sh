@@ -11,16 +11,16 @@
 
 set -euo pipefail
 
-sudo apt-get update -y
-
 echo "***************"
 echo "Installing R..."
 echo "***************"
-sudo apt-get install r-base -y
-sudo apt-get install r-base-dev -y
+sudo sed -i '$a deb http://cran.es.r-project.org/bin/linux/ubuntu trusty/' /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+sudo apt-get update -y
+sudo apt-get install r-base -y --force-yes
+sudo apt-get install r-base-dev -y --force-yes
 sudo su - -c "R -e \"install.packages('codetools', repos='http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 sudo su - -c "R -e \"update.packages(lib.loc='/usr/local/lib/R/site-library', repos='http://cran.rstudio.com/')\""
 
 echo "***************"
@@ -33,7 +33,7 @@ sudo gdebi shiny-server-1.3.0.403-amd64.deb --n
 echo "*************"
 echo "R Packages..."
 echo "*************"
-
+sudo apt-get install r-cran-plyr r-cran-reshape2 -y
 sudo su - -c "R -e \"source('/vagrant/ShinyApp/InstallPackage.R')\""
 
 # Test user shiny have access to R package
@@ -41,5 +41,14 @@ sudo su - -c "R -e \"source('/vagrant/ShinyApp/InstallPackage.R')\""
 # R
 # .libPaths()
 # .library(shiny)
+
+# R upgrade: http://cran.es.r-project.org/bin/linux/ubuntu/
+# Add an entry in /etc/apt/sources.list file
+# > deb http://cran.es.r-project.org/bin/linux/ubuntu trusty/
+# Then
+# > sudo apt-get update
+# > sudo apt-get install r-base
+# > sudo apt-get install r-base-dev
+
 
 #export R=/usr/bin
