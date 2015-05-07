@@ -3,6 +3,7 @@ Title: Hosting R and Shiny Server in Ubuntu VM
 Author: Antonio Rostaing  
 Email: arostaing@outlook.com
 Keywords: R, Shiny Server, Virtual Machine, virtualbox, vagrant, ubuntu
+Web: http://arostaing.github.io/ShinyVM
 ---
 
 #Virtual Machine hosting R and Shiny Server  
@@ -33,13 +34,14 @@ https://windows.github.com/
 - Download VM ubuntu/trusty64
   ```
   vagrant box add ubuntu/trusty64
+  ```
+  ```
   ==> box: Loading metadata for box 'ubuntu/trusty64'
-    box: URL: https://atlas.hashicorp.com/ubuntu/trusty64
-==> box: Adding box 'ubuntu/trusty64' (v14.04) for provider: virtualbox
-    box: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions
-/14.04/providers/virtualbox.box
-    box: Progress: 100% (Rate: 1840k/s, Estimated time remaining: --:--:--)
-==> box: Successfully added box 'ubuntu/trusty64' (v14.04) for 'virtualbox'!
+      box: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+  ==> box: Adding box 'ubuntu/trusty64' (v14.04) for provider: virtualbox  
+      box: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box  
+      box: Progress: 100% (Rate: 1840k/s, Estimated time remaining: --:--:--)  
+  ==> box: Successfully added box 'ubuntu/trusty64' (v14.04) for 'virtualbox'!
   ```
 - Successfully added box 'ubuntu/trusty64'?
   ```
