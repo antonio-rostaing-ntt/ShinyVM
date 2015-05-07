@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Shinyvm by arostaing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Shinyvm</h1>
+      <h2 class="project-tagline">Virtual Machine hosting R and Shiny Server  </h2>
+      <a href="https://github.com/arostaing/ShinyVM" class="btn">View on GitHub</a>
+      <a href="https://github.com/arostaing/ShinyVM/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/arostaing/ShinyVM/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <table>
+  <thead>
+  <tr>
+  <th>Title</th>
+
+  <th>Author</th>
+
+  <th>Email</th>
+
+  <th>Keywords</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>Hosting R and Shiny Server in Ubuntu VM</div></td>
+
+  <td><div>Antonio Rostaing</div></td>
+
+  <td><div>arostaing@outlook.com</div></td>
+
+  <td><div>R, Shiny Server, Virtual Machine, virtualbox, vagrant, ubuntu</div></td>
+  </tr>
+  </tbody>
+</table>
+
+<h1 id="virtual-machine-hosting-r-and-shiny-server">
+<a id="virtual-machine-hosting-r-and-shiny-server" class="anchor" href="#virtual-machine-hosting-r-and-shiny-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Machine hosting R and Shiny Server</h1>
+
+<p>If you need a VM with R and Shiny Server ready to use, just clone this repo and just execute 'vagrant up'. That's All!</p>
+
+<h2 id="tools">
+<a id="tools" class="anchor" href="#tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools</h2>
+
+<p>Oracle Virtual BOX:<br><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>  </p>
+
+<p>Vagrant:<br><a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
+
+<p>Git &amp;Github:<br><a href="http://git-scm.com/download">http://git-scm.com/download</a><br><a href="https://mac.github.com/">https://mac.github.com/</a><br><a href="https://windows.github.com/">https://windows.github.com/</a></p>
+
+<h2 id="installation">
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>Create a directory and navigate to it.  </li>
+<li>Clone repository<pre><div>git clone https://github.com/arostaing/ShinyVM</div></pre>
+</li>
+<li>Download VM ubuntu/trusty64<pre><div>vagrant box add ubuntu/trusty64</div></pre>
+<pre><div>==&gt; box: Loading metadata for box 'ubuntu/trusty64'</div><div>    box: URL: https://atlas.hashicorp.com/ubuntu/trusty64</div><div>==&gt; box: Adding box 'ubuntu/trusty64' (v14.04) for provider: virtualbox  </div><div>    box: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box  </div><div>    box: Progress: 100% (Rate: 1840k/s, Estimated time remaining: --:--:--)  </div><div>==&gt; box: Successfully added box 'ubuntu/trusty64' (v14.04) for 'virtualbox'!</div></pre>
+</li>
+<li>Successfully added box 'ubuntu/trusty64'?<pre><div>vagrant box list</div><div>ubuntu/trusty64 (virtualbox, 14.04)</div></pre>
+</li>
+</ul>
+
+<h2 id="virtual-machine-management">
+<a id="virtual-machine-management" class="anchor" href="#virtual-machine-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual machine management</h2>
+
+<p><a href="https://docs.vagrantup.com/v2/">https://docs.vagrantup.com/v2/</a></p>
+
+<p><strong>Boot virtual machine</strong><br><code>vagrant up</code></p>
+
+<p><strong>Reload provision</strong><br><code>vagrant reload --provision</code></p>
+
+<p><strong>SSH Session</strong><br><code>vagrant ssh</code></p>
+
+<p><strong>Shutdown</strong></p>
+
+<ul>
+<li>
+<code>vagrant suspend</code><br>Will save the current running state of the machine and stop it. The main benefit of this method is that it is super fast, usually taking only 5 to 10 seconds to stop and start your work. The downside is that the virtual machine still eats up your disk space, and requires even more disk space to store all the state of the virtual machine RAM on disk.</li>
+<li>
+<code>vagrant halt</code>
+Will gracefully shut down the guest operating system and power down the guest machine. You can use vagrant up when you're ready to boot it again. The benefit of this method is that it will cleanly shut down your machine, preserving the contents of disk, and allowing it to be cleanly started again. The downside is that it'll take some extra time to start from a cold boot, and the guest machine still consumes disk space.</li>
+<li>
+<code>vagrant destroy</code>
+Will remove all traces of the guest machine from your system. It'll stop the guest machine, power it down, and remove all of the guest hard disks. Again, when you're ready to work again, just issue a vagrant up. The benefit of this is that no cruft is left on your machine. The disk space and RAM consumed by the guest machine is reclaimed and your host machine is left clean. The downside is that vagrant up to get working again will take some extra time since it has to reimport the machine and reprovision it.</li>
+</ul>
+
+<h2 id="shiny-server-configuration">
+<a id="shiny-server-configuration" class="anchor" href="#shiny-server-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shiny server configuration</h2>
+
+<p><a href="http://rstudio.github.io/shiny-server/latest">http://rstudio.github.io/shiny-server/latest</a></p>
+
+<h4 id="forwarded-ports-">
+<a id="forwarded-ports" class="anchor" href="#forwarded-ports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forwarded ports:</h4>
+
+<ul>
+<li>Shiny APPs: <a href="http://127.0.0.1:3838">http://127.0.0.1:3838</a>  </li>
+<li>Shiny Admin Interface: <a href="http://127.0.0.1:4151">http://127.0.0.1:4151</a>
+</li>
+</ul>
+
+<h4 id="synced-folders-">
+<a id="synced-folders" class="anchor" href="#synced-folders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synced folders:</h4>
+
+<p>Synced folders enable Vagrant to sync a folder on the host machine to the guest machine, allowing you to continue working on your project's files on your host machine, but use the resources in the guest machine to compile or run your project.</p>
+
+<p>By default, Vagrant will share your project directory (the directory with the Vagrantfile) to /vagrant.</p>
+
+<h4 id="service-manage-">
+<a id="service-manage" class="anchor" href="#service-manage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Service manage:</h4>
+
+<p></p><pre><div>$ sudo start shiny-server  </div><div>$ sudo stop shiny-server  </div><div>$ sudo restart shiny-server</div></pre><h4 id="config-file-">
+<a id="config-file" class="anchor" href="#config-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config file:</h4>
+<pre><div>/etc/shiny-server/shiny-server.conf</div></pre><h4 id="server-log-">
+<a id="server-log" class="anchor" href="#server-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server log:</h4>
+<pre><div>/var/log/shiny-server.log.</div></pre><h4 id="installing-packages-">
+<a id="installing-packages" class="anchor" href="#installing-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing packages:</h4>
+
+<ul>
+<li>
+<strong>provision.sh</strong>: Add your package <em>'r-cran-package'</em> to line<br><code>sudo apt-get install r-cran-plyr r-cran-reshape2 -y</code>
+</li>
+<li>
+<strong>R install.packages</strong>: Add your package to the package list in <code>./ShinyApp/InstallPackage.R</code>
+</li>
+</ul>
+
+<hr>
+
+<p><img src="https://github.com/arostaing/ShinyVM/blob/master/Shiny.png?raw=true" alt="Shiny server welcome screen"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/arostaing/ShinyVM">Shinyvm</a> is maintained by <a href="https://github.com/arostaing">arostaing</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
