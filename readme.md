@@ -116,4 +116,4 @@ $ sudo restart shiny-server
 
 -----
 
-![Shiny server welcome screen](./Shiny.png)
+![Shiny server welcome screen](https://github.com/arostaing/ShinyVM/blob/master/Shiny.png?raw=true)
