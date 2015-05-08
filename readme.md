@@ -50,11 +50,11 @@ https://windows.github.com/
   vagrant box list
   ubuntu/trusty64 (virtualbox, 14.04)
   ```
-  
+
 ##Virtual machine provisioning
 
 - *Provision.sh*: contains all commands in order to install R, Shiny Server, and R packages.  
-- *InstallPackage.R*: If you add your packages here, they will be available for tour R apps after provision.
+- *InstallPackage.R*: If you add your packages here, they will be available for yours R apps after provision.
 
 
 ##Virtual machine management
