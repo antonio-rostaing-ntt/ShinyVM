@@ -8,7 +8,9 @@ Web: http://arostaing.github.io/ShinyVM
 
 #Virtual Machine hosting R and Shiny Server  
 
-If you need a VM with R and Shiny Server ready to use, just clone this repo and just execute 'vagrant up'. That's All!
+Ubuntu Server 14.04 LTS (Trusty Tahr) virtual machine provisioned with R and Shiny Server ready to use.  
+Once you have the right tools installed, clone this repo and just execute 'vagrant up'.  
+That's All!
 
 ## Tools
 
@@ -31,7 +33,7 @@ https://windows.github.com/
   ```
   git clone https://github.com/arostaing/ShinyVM
   ```
-- Download VM ubuntu/trusty64
+- Add ubuntu/trusty64 box to vagrant's box system.
   ```
   vagrant box add ubuntu/trusty64
   ```
@@ -48,6 +50,11 @@ https://windows.github.com/
   vagrant box list
   ubuntu/trusty64 (virtualbox, 14.04)
   ```
+  
+##Virtual machine provisioning
+
+- *Provision.sh*: contains all commands in order to install R, Shiny Server, and R packages.  
+- *InstallPackage.R*: If you add your packages here, they will be available for tour R apps after provision.
 
 
 ##Virtual machine management
