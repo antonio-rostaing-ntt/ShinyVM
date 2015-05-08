@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Shiny Virtual Machine by arostaing</title>
+    <title>Shiny Server Virtual Machine by arostaing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Shiny Virtual Machine</h1>
+      <h1 class="project-name">Shiny Server Virtual Machine</h1>
       <h2 class="project-tagline">Virtual Machine hosting R and Shiny Server  </h2>
       <a href="https://github.com/arostaing/ShinyVM" class="btn">View on GitHub</a>
       <a href="https://github.com/arostaing/ShinyVM/zipball/master" class="btn">Download .zip</a>
@@ -19,27 +19,39 @@
     </section>
 
     <section class="main-content">
-      <table>
+      <p></p><table>
   <thead>
   <tr>
   <th>Title</th>
 
-  <th>Author</th>
+<p></p>
+<th>Author</th>
 
-  <th>Email</th>
+<p></p>
+<th>Email</th>
 
-  <th>Keywords</th>
+<p></p>
+<th>Keywords</th>
+
+<p></p>
+<th>Web</th>
   </tr>
   </thead>
   <tbody>
   <tr>
   <td><div>Hosting R and Shiny Server in Ubuntu VM</div></td>
 
-  <td><div>Antonio Rostaing</div></td>
+<p></p>
+<td><div>Antonio Rostaing</div></td>
 
-  <td><div>arostaing@outlook.com</div></td>
+<p></p>
+<td><div><a href="mailto:arostaing@outlook.com">arostaing@outlook.com</a></div></td>
 
-  <td><div>R, Shiny Server, Virtual Machine, virtualbox, vagrant, ubuntu</div></td>
+<p></p>
+<td><div>R, Shiny Server, Virtual Machine, virtualbox, vagrant, ubuntu</div></td>
+
+<p></p>
+<td><div><a href="http://arostaing.github.io/ShinyVM">http://arostaing.github.io/ShinyVM</a></div></td>
   </tr>
   </tbody>
 </table>
@@ -47,7 +59,7 @@
 <h1 id="virtual-machine-hosting-r-and-shiny-server">
 <a id="virtual-machine-hosting-r-and-shiny-server" class="anchor" href="#virtual-machine-hosting-r-and-shiny-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Machine hosting R and Shiny Server</h1>
 
-<p>If you need a VM with R and Shiny Server ready to use, just clone this repo and just execute 'vagrant up'. That's All!</p>
+<p>Ubuntu Server 14.04 LTS (Trusty Tahr) virtual machine provisioned with R and Shiny Server ready to use.<br>Once you have the right tools installed, clone this repo and just execute 'vagrant up'.<br>That's All!</p>
 
 <h2 id="tools">
 <a id="tools" class="anchor" href="#tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools</h2>
@@ -65,11 +77,21 @@
 <li>Create a directory and navigate to it.  </li>
 <li>Clone repository<pre><div>git clone https://github.com/arostaing/ShinyVM</div></pre>
 </li>
-<li>Download VM ubuntu/trusty64<pre><div>vagrant box add ubuntu/trusty64</div></pre>
+<li>Add ubuntu/trusty64 box to vagrant's box system.<pre><div>vagrant box add ubuntu/trusty64</div></pre>
 <pre><div>==&gt; box: Loading metadata for box 'ubuntu/trusty64'</div><div>    box: URL: https://atlas.hashicorp.com/ubuntu/trusty64</div><div>==&gt; box: Adding box 'ubuntu/trusty64' (v14.04) for provider: virtualbox  </div><div>    box: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box  </div><div>    box: Progress: 100% (Rate: 1840k/s, Estimated time remaining: --:--:--)  </div><div>==&gt; box: Successfully added box 'ubuntu/trusty64' (v14.04) for 'virtualbox'!</div></pre>
 </li>
 <li>Successfully added box 'ubuntu/trusty64'?<pre><div>vagrant box list</div><div>ubuntu/trusty64 (virtualbox, 14.04)</div></pre>
 </li>
+</ul>
+
+<h2 id="virtual-machine-provisioning">
+<a id="virtual-machine-provisioning" class="anchor" href="#virtual-machine-provisioning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual machine provisioning</h2>
+
+<ul>
+<li>
+<em>Provision.sh</em>: contains all commands in order to install R, Shiny Server, and R packages.  </li>
+<li>
+<em>InstallPackage.R</em>: If you add your packages here, they will be available for yours R apps after provision.</li>
 </ul>
 
 <h2 id="virtual-machine-management">
@@ -138,10 +160,10 @@ Will remove all traces of the guest machine from your system. It'll stop the gue
 
 <hr>
 
-<p><img src="https://github.com/arostaing/ShinyVM/blob/master/Shiny.png?raw=true" alt="Shiny server welcome screen"></p>
+<p></p><p><img src="https://github.com/arostaing/ShinyVM/blob/master/Shiny.png?raw=true" alt="Shiny server welcome screen"></p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/arostaing/ShinyVM">Shinyvm</a> is maintained by <a href="https://github.com/arostaing">arostaing</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/arostaing/ShinyVM">Shiny Server Virtual Machine</a> is maintained by <a href="https://github.com/arostaing">arostaing</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
