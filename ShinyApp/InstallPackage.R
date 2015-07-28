@@ -5,7 +5,8 @@ list.of.packages <- c('bit64',
                  'data.table',
                  'grid',
                  'shiny',
-                 'rmarkdown')
+                 'rmarkdown',
+				 'RJDBC')
 # Update package
 update.packages(checkBuilt = TRUE, ask = FALSE, lib.loc='/usr/local/lib/R/site-library', repos='http://cran.rstudio.com/')
 update.packages(checkBuilt = TRUE, ask = FALSE, lib.loc='/usr/lib/R/site-library', repos='http://cran.rstudio.com/')

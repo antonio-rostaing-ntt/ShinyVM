@@ -17,6 +17,7 @@ echo "***************"
 sudo sed -i '$a deb http://cran.es.r-project.org/bin/linux/ubuntu trusty/' /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 sudo apt-get update -y
+sudo apt-get install default-jre -y --force-yes
 sudo apt-get install r-base -y --force-yes
 sudo apt-get install r-base-dev -y --force-yes
 sudo su - -c "R -e \"install.packages('codetools', repos='http://cran.rstudio.com/')\""
